@@ -25,15 +25,15 @@ module.exports = () => {
         short_name: 'MyPWA',
         description: 'My awesome Progressive Web App!',
         background_color: '#ffffff',
-        crossorigin: 'use-credentials', //can be null, use-credentials or anonymous
+        crossorigin: 'use-credentials',
         icons: [
           {
             src: path.resolve('src/assets/icon.png'),
-            sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+            sizes: [96, 128, 192, 256, 384, 512]
           },
           {
             src: path.resolve('src/assets/large-icon.png'),
-            size: '1024x1024' // you can also use the specifications pattern
+            size: '1024x1024'
           },
           {
             src: path.resolve('src/assets/maskable-icon.png'),
