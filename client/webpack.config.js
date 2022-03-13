@@ -27,25 +27,25 @@ module.exports = () => {
         background_color: '#ffffff',
         crossorigin: 'use-credentials',
         icons: [
-          {
-            src: path.resolve('src/assets/icon.png'),
-            sizes: [96, 128, 192, 256, 384, 512]
-          },
-          {
-            src: path.resolve('src/assets/large-icon.png'),
-            size: '1024x1024'
-          },
-          {
-            src: path.resolve('src/assets/maskable-icon.png'),
-            size: '1024x1024',
-            purpose: 'maskable'
-          }
+          // {
+          //   src: path.resolve('src/images/logo.png'),
+          //   sizes: [96, 128, 192, 256, 384, 512]
+          // },
+          // {
+          //   src: path.resolve('src/assets/large-icon.png'),
+          //   size: '1024x1024'
+          // },
+          // {
+          //   src: path.resolve('src/assets/maskable-icon.png'),
+          //   size: '1024x1024',
+          //   purpose: 'maskable'
+          // }
         ]
       }),
 
       new InjectManifest({
-        swSrc: './src/sw.js',
-        swDest: 'service-worker.js',
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
       }), 
     ],
 
@@ -61,7 +61,11 @@ module.exports = () => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env']
+              presets: ['@babel/preset-env'],
+              plugins: [
+                "@babel/plugin-proposal-object-rest-spread",
+                "@babel/transform-runtime",
+              ],
             }
           }
         },
