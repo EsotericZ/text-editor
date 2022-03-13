@@ -27,19 +27,11 @@ module.exports = () => {
         background_color: '#ffffff',
         crossorigin: 'use-credentials',
         icons: [
-          // {
-          //   src: path.resolve('src/images/logo.png'),
-          //   sizes: [96, 128, 192, 256, 384, 512]
-          // },
-          // {
-          //   src: path.resolve('src/assets/large-icon.png'),
-          //   size: '1024x1024'
-          // },
-          // {
-          //   src: path.resolve('src/assets/maskable-icon.png'),
-          //   size: '1024x1024',
-          //   purpose: 'maskable'
-          // }
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
         ]
       }),
 
@@ -58,6 +50,7 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /(node_modules|bower_components)/,
+          // exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
