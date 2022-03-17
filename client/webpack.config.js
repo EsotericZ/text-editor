@@ -37,7 +37,7 @@ module.exports = () => {
 
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
+        swDest: './src-sw.js',
       }), 
     ],
 
@@ -50,7 +50,6 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /(node_modules|bower_components)/,
-          // exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
